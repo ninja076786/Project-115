@@ -1,8 +1,7 @@
 leftShoulder_x=0;
 leftShoulder_y=0;
 function preload(){
-
-    
+pokeleft=loadImage("https://i.postimg.cc/ZY9ppnG6/cute-pikachu-png-8-removebg-preview.png")
 }
  
 
@@ -19,8 +18,8 @@ function setup(){
 function gotPoses(results){
     if(results.length>0){
         console.log(results);
-        leftShoulder_x=results[0].pose.leftShoulder.x
-        leftShoulder_y=results[0].pose.leftShoulder.y
+        leftShoulder_x=results[0].pose.leftShoulder.x-20
+        leftShoulder_y=results[0].pose.leftShoulder.y-50
     }
 
 }
@@ -31,4 +30,6 @@ function modelLoaded(){
  
 function draw(){
 image(video,0,0,300,300);
+image(pokeleft,leftShoulder_x,leftShoulder_y,50,50);
 }
+
